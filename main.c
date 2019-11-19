@@ -34,7 +34,8 @@ int getIntegerInput(void) {
 }
 
 int main(int argc, char *argv[]) {
-
+	
+	int roundIndex = 0;
 	srand((unsigned)time(NULL));
 	
 	//set the number of players
@@ -48,10 +49,16 @@ int main(int argc, char *argv[]) {
 	
 		//Game start --------
 	do {
+		printf("\n--------------------------------------------------\n");
+		printf("--------------ROUND %d (cardIndex : %d--------------\n",roundIndex+1, cardIndex);
+		printf("--------------------------------------------------\n");
 		
 		betDollar();
+		printCardInitialStatus();
+		
+		printf("\n------------------ GAME start --------------------------\n");
+		
 	
-			printf("\n------------------ GAME start --------------------------\n");
 		} while (gameEnd == 0);
 		
 	return 0;
