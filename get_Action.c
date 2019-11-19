@@ -9,12 +9,12 @@ int getAction(void) {
 		 
 	int answer;
 	
-	printf("Action? (0 - go, others - stay) : ");
+
 	
 		if (player_num == 0)
 		{
 			do
-			{
+			{	printf("Action? (0 - go, others - stay) : ");
 				answer = getIntegerInput();
 				if (answer == 0)
 				{	
@@ -27,7 +27,7 @@ int getAction(void) {
 		else if (player_num > 0)
 		{	
 			do
-			{
+			{	printf("Action? (0 - go, others - stay) ");
 				if (CardSum[player_num] < 17)
 				{
 					printf("   ::: GO!\n");		

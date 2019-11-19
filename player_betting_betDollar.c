@@ -5,6 +5,7 @@
 /*player betting*/
 
 extern int bet[N_MAX_USER]; 
+extern int dollar[N_MAX_USER];
 extern int player_num;
 extern int n_user;
 
@@ -14,7 +15,7 @@ int betDollar(void) {
 	srand((unsigned)time(NULL));
 
 		do
-		{	
+		{	dollar[0] = 50;
 			printf("   ->  your betting (total : $50) : ");
 			bet[0] = getIntegerInput();
 		
@@ -29,9 +30,10 @@ int betDollar(void) {
 		}while((bet[0] <= 0) || (bet[0] > 50));
 	
 	for (player_num=1;player_num<n_user;player_num++)
-	{
+	{	
+		dollar[player_num] = 50;
 		bet[player_num] = 1 + (rand()%N_MAX_BET);
-		printf("   ->  player%d bets $%d (out of $50)\n",player_num, bet[player_num]);
+		printf("   ->  player%d bets $%d (out of $%d)\n",player_num, bet[player_num], dollar[player_num]);
 	}
 	
 	printf("-------------------------------------\n");

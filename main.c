@@ -10,15 +10,15 @@ int CardTray[N_CARDSET*N_CARD];
 int cardIndex = 0;	
 
 //player info
-int n_user;                        	//number of users
-int dollar[N_MAX_USER];	            //dollars that each player has
-int player_num;                     // nth player (server's player num = n_user, my player_num = 0)
-int gameEnd = 0; 					//game end flag
+int n_user;                       				    	//number of users
+int dollar[N_MAX_USER];	          					  //dollars that each player has
+int player_num;                   				 	 // nth player (server's player num = n_user, my player_num = 0)
+int gameEnd = 0; 									//game end flag
 
 //play yard information
-int bet[N_MAX_USER];               //current betting 
-int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];	//cards that currently the players hold
-int cardSum[N_MAX_USER];					//sum of the cards
+int bet[N_MAX_USER];            			  		 //current betting 
+int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];			//cards that currently the players hold
+int cardSum[N_MAX_USER];							//sum of the cards
 
 //get an integer input from standard input (keyboard)
 //return : input integer value
@@ -75,6 +75,10 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
+			while(){
+				printUserCardStatus();							//print current card status
+				getAction();									//GO? STOP? :::
+			}
 		}
 		
 	
