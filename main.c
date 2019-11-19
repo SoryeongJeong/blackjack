@@ -19,6 +19,8 @@ int gameEnd = 0; 									//game end flag
 int bet[N_MAX_USER];            			  		 //current betting 
 int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];			//cards that currently the players hold
 int cardSum[N_MAX_USER];							//sum of the cards
+int gameEnd = 0; 									//game end flag
+
 
 //get an integer input from standard input (keyboard)
 //return : input integer value
@@ -88,6 +90,9 @@ int main(int argc, char *argv[]) {
 		//result
 		checkResult();
 		} while (gameEnd == 0);
-		
+			
+	checkWinner();
+	
+	
 	return 0;
 }
