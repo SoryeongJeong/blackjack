@@ -4,6 +4,9 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+//card tray object
+int CardTray[N_CARDSET*N_CARD];
+int cardIndex = 0;	
 
 //player info
 int n_user; 

@@ -1,12 +1,12 @@
 #include "headerbj.h"
 
 
-//playing game functions (1) player setting-----------------------------
+//1.playing game functions (1) player setting-----------------------------
+//configUser : set the number of players 
 
-extern int user;
+extern int n_user;
+
 int configUser(void){
-		
-		int n_user;
 		
 		do
 	{
