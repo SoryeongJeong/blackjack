@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
 		//each player's turn
 		for (player_num=0; player_num <n_user;player_num++) //each player
 		{
+			//check if the turn ends or not
 			if (player_num == 0 )
 			{
 				printf(">>> my turn! ------------\n");
@@ -75,13 +76,17 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
-			while(){
+			while(cardIndex < (cardIndex +10))
+			{		
+			
 				printUserCardStatus();							//print current card status
-				getAction();									//GO? STOP? :::
-			}
+				calcStepResult();								//check the card status
+				getAction();									//GO? STOP?
+			}									
 		}
 		
-	
+		//result
+		checkResult();
 		} while (gameEnd == 0);
 		
 	return 0;

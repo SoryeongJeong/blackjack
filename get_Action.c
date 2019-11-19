@@ -30,13 +30,13 @@ int getAction(void) {
 			{	printf("Action? (0 - go, others - stay) ");
 				if (CardSum[player_num] < 17)
 				{
-					printf("   ::: GO!\n");		
+					printf("   GO!\n");		
 					cardIndex++;
 					CardSum[player_num] += CardTray[cardIndex];
 				}
 				else
 				{
-					printf("   ::: STAY!\n");
+					printf("   STAY!\n");
 				}
 			}while(CardSum[player_num]<21);
 		}
