@@ -10,7 +10,7 @@ extern int n_user;
 
 int betDollar(void) {
 
-	printf("\n -----------BETTING STEP------------        \n");
+	printf("\n -----------BETTING STEP------------\n");
 	srand((unsigned)time(NULL));
 
 		do
@@ -34,6 +34,6 @@ int betDollar(void) {
 		printf("   ->  player%d bets $%d (out of $50)\n",player_num, bet[player_num]);
 	}
 	
-	printf("--------------------------\n");
+	printf("-------------------------------------\n");
 }
 

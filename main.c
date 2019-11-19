@@ -18,6 +18,7 @@ int gameEnd = 0; 					//game end flag
 //play yard information
 int bet[N_MAX_USER];               //current betting 
 int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];	//cards that currently the players hold
+int cardSum[N_MAX_USER];					//sum of the cards
 
 //get an integer input from standard input (keyboard)
 //return : input integer value
@@ -50,13 +51,31 @@ int main(int argc, char *argv[]) {
 		//Game start --------
 	do {
 		printf("\n--------------------------------------------------\n");
-		printf("--------------ROUND %d (cardIndex : %d--------------\n",roundIndex+1, cardIndex);
-		printf("--------------------------------------------------\n");
+		printf("--------------ROUND %d (cardIndex : %d)-------------\n",roundIndex+1, cardIndex);
+		printf("----------------------------------------------------\n");
 		
 		betDollar();
 		printCardInitialStatus();
 		
 		printf("\n------------------ GAME start --------------------------\n");
+		
+		//each player's turn
+		for (player_num=0; player_num <n_user;player_num++) //each player
+		{
+			if (player_num == 0 )
+			{
+				printf(">>> my turn! ------------\n");
+			}
+			else if(player_num = n_user)
+			{
+				printf(">>> server turn! ---------\n");
+			}
+			else
+			{
+				printf(">>> player %d turn! -----\n", player_num);
+			}
+			
+		}
 		
 	
 		} while (gameEnd == 0);
