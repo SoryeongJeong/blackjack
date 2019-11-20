@@ -1,5 +1,8 @@
-#include "headerbj.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include "headerbj.h"
+
 
 extern int CardTray[N_CARDSET*N_CARD];
 extern int cardIndex;	

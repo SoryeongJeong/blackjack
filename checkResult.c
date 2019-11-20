@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "headerbj.h"
 
 
@@ -23,12 +26,12 @@ int checkResult() {
 					{
 							if((cardSum[dif_player]==21))
 						{
-							printf("lose! (sum : %d) --> $%d", cardSum[0],dollar[0]-bet[0]);
+							printf("lose! (sum : %d) --> $%d\n", cardSum[0],dollar[0]-bet[0]);
 							dollar[0] -= bet[0];
 						}
 						else if(cardSum[0] > cardSum[dif_player])
 						{
-							printf("win (sum : %d) --> $%d", cardSum[0], dollar[0] + 2*bet[0]);
+							printf("win (sum : %d) --> $%d\n", cardSum[0], dollar[0] + 2*bet[0]);
 							dollar[0] += 2*bet[0]; 
 						}
 					}
@@ -40,7 +43,7 @@ int checkResult() {
 				}
 				else if(cardSum[0] == 21)
 				{
-					printf("BlackJack! win ($%d)", dollar[0] + 2*bet[0]);
+					printf("BlackJack! win ($%d)\n", dollar[0] + 2*bet[0]);
 					dollar[0] += 2*bet[0];
 				}
 		}
@@ -53,12 +56,12 @@ int checkResult() {
 					{
 							if((cardSum[dif_player]==21))
 						{
-							printf("lose! (sum : %d) --> $%d", cardSum[player_num],dollar[player_num]-bet[player_num]);
+							printf("lose! (sum : %d) --> $%d\n", cardSum[player_num],dollar[player_num]-bet[player_num]);
 							dollar[player_num] -= bet[player_num];
 						}
 						else if(cardSum[0] > cardSum[dif_player])
 						{
-							printf("win (sum : %d) --> $%d", cardSum[player_num], dollar[player_num] + 2*bet[player_num]);
+							printf("win (sum : %d) --> $%d\n", cardSum[player_num], dollar[player_num] + 2*bet[player_num]);
 							dollar[0] += 2*bet[0]; 
 						}
 					}
@@ -70,7 +73,7 @@ int checkResult() {
 				}
 				else if(cardSum[player_num] == 21)
 				{
-					printf("BlackJack! win ($%d)", dollar[player_num] + 2*bet[player_num]);
+					printf("BlackJack! win ($%d)\n", dollar[player_num] + 2*bet[player_num]);
 					dollar[player_num] += 2*bet[player_num];
 				}
 		}

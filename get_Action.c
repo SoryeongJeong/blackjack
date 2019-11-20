@@ -1,43 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "headerbj.h"
 
 extern int cardIndex;
-extern int CardSum[N_MAX_USER];
+extern int cardSum[N_MAX_USER];
 extern int player_num;
-int CardTray[N_CARDSET*N_CARD];
+extern int CardTray[N_CARDSET*N_CARD];
+extern int n_user;
 
 int getAction(void) {
 		 
-	int answer;
-	
-
+		int answer;
 	
 		if (player_num == 0)
 		{
-			do
-			{	printf("Action? (0 - go, others - stay) : ");
+				printf("Action? (0 - go, others - stay) : ");
 				answer = getIntegerInput();
 				if (answer == 0)
-				{	
+				{
 						cardIndex++;
-						CardSum[0] += CardTray[cardIndex];
+						cardSum[0] += CardTray[cardIndex];
 				}
-			}while(CardSum[0]<21);
 		}
 		
-		else if (player_num > 0)
+		else if (player_num > 0 )
 		{	
-			do
-			{	printf("Action? (0 - go, others - stay) ");
-				if (CardSum[player_num] < 17)
+				printf("Action? (0 - go, others - stay) ");
+				if (cardSum[player_num] < 17)
 				{
 					printf("   GO!\n");		
 					cardIndex++;
-					CardSum[player_num] += CardTray[cardIndex];
+					cardSum[player_num] += CardTray[cardIndex];
 				}
 				else
 				{
 					printf("   STAY!\n");
 				}
-			}while(CardSum[player_num]<21);
 		}
 	}

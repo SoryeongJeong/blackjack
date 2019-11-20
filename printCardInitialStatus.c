@@ -1,12 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "headerbj.h"
 
 //print initial card status
 
 extern int CardTray[N_CARDSET*N_CARD];
 extern int player_num;
-extern n_user;
-extern cardIndex;
-extern CardSum[N_MAX_USER];
+extern int n_user;
+extern int cardIndex;
+extern int cardSum[N_MAX_USER];
+
 
 void printCardInitialStatus(void) {
 	
@@ -14,11 +18,11 @@ void printCardInitialStatus(void) {
 	
 			printf("   -> server     : ");
 			printf("X ");
-			CardSum[n_user] = CardTray[cardIndex];
+			cardSum[n_user] = CardTray[cardIndex];
 			cardIndex ++;
 			printCard(CardTray[cardIndex]);
 			printf("\n");
-			CardSum[n_user] += CardTray[cardIndex];
+			cardSum[n_user] += CardTray[cardIndex];
 			cardIndex ++;
 
 		
@@ -28,10 +32,10 @@ void printCardInitialStatus(void) {
 			{
 				printf("   -> you        : ");
 				printCard(CardTray[cardIndex]);
-				CardSum[0] = CardTray[cardIndex];
+				cardSum[0] = CardTray[cardIndex];
 				cardIndex ++;
 				printCard(CardTray[cardIndex]);
-				CardSum[0] += CardTray[cardIndex];
+				cardSum[0] += CardTray[cardIndex];
 				cardIndex ++;
 				printf("\n");
 			}
@@ -40,10 +44,10 @@ void printCardInitialStatus(void) {
 			{
 				printf("   -> player %d   : ");
 				printCard(CardTray[cardIndex]);
-				CardSum[player_num] = CardTray[cardIndex];
+				cardSum[player_num] = CardTray[cardIndex];
 				cardIndex ++;		
 				printCard(CardTray[cardIndex]);
-				CardSum[player_num] += CardTray[cardIndex];
+				cardSum[player_num] += CardTray[cardIndex];
 				cardIndex ++;
 				printf("\n");
 			}
