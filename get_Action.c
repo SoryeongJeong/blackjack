@@ -11,7 +11,9 @@ extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 extern int n_user;
 
 int getAction(void) {
-		 
+		
+
+			
 		int answer;
 		int cnt;
 		if (player_num == 0)
@@ -20,15 +22,14 @@ int getAction(void) {
 				printf("Action? (0 - go, others - stay) : ");
 				answer = getIntegerInput();
 				if (answer == 0)
-				{
+					{
 						cardIndex++;
-						cardSum[0] += CardTray[cardIndex];
+						cardSum[0] += getCardNum(CardTray[cardIndex]);
 						cardhold[n_user][cnt] = CardTray[cardIndex];
 						cnt ++;
-				}
-				
+					}
+		 
 		}
-		
 		else if (player_num > 0 )
 		{		
 				cnt = 2;
@@ -37,7 +38,7 @@ int getAction(void) {
 				{
 					printf("   GO!\n");		
 					cardIndex++;
-					cardSum[player_num] += CardTray[cardIndex];
+					cardSum[player_num] += getCardNum(CardTray[cardIndex]);
 					cardhold[n_user][cnt] = CardTray[cardIndex];
 					cnt ++;
 				}

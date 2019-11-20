@@ -20,14 +20,14 @@ void printCardInitialStatus(void) {
 			printf("   -> server     : ");
 			printf("X ");
 			
-			cardSum[n_user] = CardTray[cardIndex];
+			cardSum[n_user] = getCardNum(CardTray[cardIndex]);
 			cardhold[n_user][0] = CardTray[cardIndex];
 			cardIndex ++;
 			printCard(CardTray[cardIndex]);
 			printf("\n");
 			
 			cardhold[n_user][0] = CardTray[cardIndex];
-			cardSum[n_user] += CardTray[cardIndex];
+			cardSum[n_user] += getCardNum(CardTray[cardIndex]);
 			cardhold[n_user][1] = CardTray[cardIndex];
 			cardIndex ++;
 
@@ -38,13 +38,14 @@ void printCardInitialStatus(void) {
 			{
 				printf("   -> you        : ");
 				printCard(CardTray[cardIndex]);
-				cardSum[0] = CardTray[cardIndex];
+				cardSum[0] = getCardNum(CardTray[cardIndex]);
 				cardhold[0][0] = CardTray[cardIndex];
 				cardIndex ++;
 				printCard(CardTray[cardIndex]);
 				
-				cardSum[0] += CardTray[cardIndex];
+				cardSum[0] += getCardNum(CardTray[cardIndex]);
 				cardhold[0][1] = CardTray[cardIndex];
+				
 				cardIndex ++;
 				printf("\n");
 			}
@@ -53,12 +54,12 @@ void printCardInitialStatus(void) {
 			{
 				printf("   -> player %d   : ");
 				printCard(CardTray[cardIndex]);
-				cardSum[player_num] = CardTray[cardIndex];
+				cardSum[player_num] = getCardNum(CardTray[cardIndex]);
 				cardhold[player_num][0] = CardTray[cardIndex];
 				cardIndex ++;		
 				printCard(CardTray[cardIndex]);
 				
-				cardSum[player_num] += CardTray[cardIndex];
+				cardSum[player_num] += getCardNum(CardTray[cardIndex]);
 				cardhold[n_user][1] = CardTray[cardIndex];
 				cardIndex ++;
 				printf("\n");

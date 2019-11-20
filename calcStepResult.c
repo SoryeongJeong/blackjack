@@ -15,18 +15,18 @@ extern int CardTray[N_CARDSET*N_CARD];
 
 int calcStepResult() {
 	
-	for(player_num =0; player_num<n_user;player_num++)	
+	if((player_num >=0) && (player_num <n_user))
 	{
 		if (cardSum[player_num] == 21)
 		{
-			printf("\t ::: BLACK JACK! conguratulation, you win! ---> +$%d ($%d)\n",2*bet[player_num], dollar[player_num] + 2*bet[player_num]);
+		printf("\t ::: BLACK JACK! conguratulation, you win! ---> +$%d ($%d)\n",2*bet[player_num], dollar[player_num] + 2*bet[player_num]);
 		}
 		else if (cardSum[player_num] >21)
 		{
 			printf("\t ::: DEAD (sum : %d) --> -$%d\n",cardSum[player_num], bet[player_num], dollar[player_num]-bet[player_num]);
 		}
 	}
-	if (player_num == n_user)
+	else if (player_num == n_user)
 	{
 		if(cardSum[n_user] <21 )
 		{
