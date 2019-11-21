@@ -17,14 +17,15 @@ int getCardNum(int cardnum) {
 		
 		else
 		{
-				
 			Card[cardnum] = (cardnum%13) + 1;
 			return Card[cardnum];
 		}
 }
 
+
 //2. print the card information (e.g. DiaA)
 void printCard(int cardnum) {
+	
 	
 	// card shape (Hart, Dia, Spade, Club)  
 	if ((cardnum/13) == 0)

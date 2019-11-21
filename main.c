@@ -8,6 +8,7 @@
 //card tray object
 int CardTray[N_CARDSET*N_CARD];
 int cardIndex = 0;	
+int cardcnt;
 
 //player info
 int n_user;                       				    	//number of users
@@ -38,7 +39,6 @@ int main(int argc, char *argv[]) {
 	
 	int roundIndex = 0;
 	int i;
-	int cardcnt;
 	srand((unsigned)time(NULL));
 	
 	//set the number of players
@@ -79,20 +79,19 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
-			while (i==player_num) //do until the player dies or player says stop
+			while (1) //do until the player dies or player says stop
 			{
-				printUserCardStatus(i,cardcnt);  //print current card status 
-				getAction();							//GO? STOP? ::: 
+				printUserCardStatus(player_num,cardcnt);  //print current card status 
 				calcStepResult();						//check the card status ::: 
-				
-				
+				getAction(cardcnt);							//GO? STOP? ::: 
+				cardcnt ++;
 				//check if the turn ends or not
 			}
 			
 										
 		}
 		roundIndex++;
-		cardcnt ++;
+		
 		//result
 		
 		checkResult();

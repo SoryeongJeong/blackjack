@@ -5,7 +5,7 @@
 
 
 extern int CardTray[N_CARDSET*N_CARD];
-extern int cardIndex;	
+extern int cardIndex;
 
 //card array controllers (1) mix the card sets and put in the array	
 
@@ -35,10 +35,11 @@ int mixCardTray(void) {
 
 //card array controllers (2) get one card from the tray
 int pullCard(void)
-{
+{	
 	int card[52];
 	card[cardIndex] = CardTray[cardIndex];
-	return card[cardIndex];
 	cardIndex ++;
+	return card[cardIndex];
+	
 
 }
