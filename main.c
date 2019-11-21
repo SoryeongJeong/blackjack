@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
 	int roundIndex = 0;
 	int i;
 	srand((unsigned)time(NULL));
+	cardcnt = 2;
 	
 	//set the number of players
 	configUser();
@@ -64,7 +65,7 @@ int main(int argc, char *argv[]) {
 		//each player's turn
 		for (player_num=0; player_num <n_user;player_num++) //each player
 		{
-			cardcnt =2;
+			
 			//check if the turn ends or not
 			if (player_num == 0 )
 			{
@@ -79,12 +80,12 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
-			while (1) //do until the player dies or player says stop
+			while ((cardSum[0]<=21) || ((player_num>0)&&(player_num <= n_user))&&(cardSum[player_num]<17)) //do until the player dies or player says stop
 			{
 				printUserCardStatus(player_num,cardcnt);  //print current card status 
 				calcStepResult();						//check the card status ::: 
-				getAction(cardcnt);							//GO? STOP? ::: 
-				cardcnt ++;
+				getAction(cardcnt);						//GO? STOP? ::: 
+				cardcnt++;
 				//check if the turn ends or not
 			}
 			

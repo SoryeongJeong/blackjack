@@ -16,7 +16,6 @@ int getAction(int cnt) {
 
 			
 		int answer;
-		int i;
 		if (player_num == 0)
 		{		
 				
@@ -24,17 +23,12 @@ int getAction(int cnt) {
 				answer = getIntegerInput();
 				if (answer == 0)
 					{
-						for(cnt = cardcnt; cnt<10 ; cnt++)
-						{
+							cnt = cardcnt + 1;
 							cardIndex++;
 							cardhold[0][cnt] = pullCard();
 							cardSum[0] += getCardNum(CardTray[cardIndex]);
 						}
-						//printf("cardnum : %i, number:%i\n", CardTray[cardIndex] , getCardNum(CardTray[cardIndex]));
-						
-						
-					}
-		 
+						printf("cardnum : %i, number:%i\n", CardTray[cardIndex] , getCardNum(CardTray[cardIndex]));	
 		}
 		else if (player_num > 0 )
 		{		
@@ -51,7 +45,7 @@ int getAction(int cnt) {
 				
 					}
 				
-				}
+			}
 				else
 				{
 					printf("   STAY!\n");

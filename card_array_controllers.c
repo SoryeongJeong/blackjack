@@ -40,6 +40,7 @@ int pullCard(void)
 	card[cardIndex] = CardTray[cardIndex];
 	cardIndex ++;
 	return card[cardIndex];
+
 	
 
 }
