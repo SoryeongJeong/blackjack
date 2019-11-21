@@ -18,23 +18,23 @@ int betDollar(void) {
 	srand((unsigned)time(NULL));
 
 		do
-		{	dollar[0] = 50;
-			printf("   ->  your betting (total : $50) : ");
+		{	
+			printf("   ->  your betting (total : $%d) : ",dollar[0]);
 			bet[0] = getIntegerInput();
 		
 			if (bet[0]<=0)
 				{
 					printf("invalid input for betting (%d)\n",bet[0]);
 				}
-			else if (bet[0]>50)
+			else if (bet[0]>dollar[0])
 				{
-					printf("you only have $50! bet again \n");
+					printf("you only have %d! bet again \n",dollar[0]);
 				}
-		}while((bet[0] <= 0) || (bet[0] > 50));
+		}while((bet[0] <= 0) || (bet[0] > dollar[0]));
 	
 	for (player_num=1;player_num<n_user;player_num++)
 	{	
-		dollar[player_num] = 50;
+		
 		bet[player_num] = 1 + (rand()%N_MAX_BET);
 		printf("   ->  player%d bets $%d (out of $%d)\n",player_num, bet[player_num], dollar[player_num]);
 	}

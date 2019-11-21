@@ -11,10 +11,10 @@ extern int n_user;
 
 int configUser(void){
 		
-		do
+	do
 	{
-		printf("input the number of players (MAX 5) : ");
-		n_user = getIntegerInput(); 
+		printf("input the number of players (MAX 5) : ");  
+		n_user = getIntegerInput();                      //input the number of players (n_user : 1~5)
 		if (n_user <= 0)
 			{
 				printf("invalid input players (%d)\n",n_user);

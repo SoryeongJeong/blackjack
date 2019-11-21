@@ -17,7 +17,7 @@ void offerCards(void) {
 		cardhold[i][1] = pullCard();
 		
 	}
-	//2. give two card for the operator
+	//2. give two card for the operator (server)
 	cardhold[n_user][0] = pullCard();
 	cardhold[n_user][1] = pullCard();
 	

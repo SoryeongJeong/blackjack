@@ -8,8 +8,8 @@
 extern int CardTray[N_CARDSET*N_CARD];
 extern int player_num;
 extern int n_user;
-extern int cardIndex;
-extern int cardSum[N_MAX_USER];
+extern int cardIndex;												// nth one card out of 52 cards
+extern int cardSum[N_MAX_USER];										// nth player card number SUM
 extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];	
 
 
@@ -17,7 +17,7 @@ void printCardInitialStatus(void) {
 	
 	printf("\n ----------- CARD OFFERING ------------\n");
 	
-			printf("   -> server     : ");
+			printf("   -> server     : "); 							// server's Initial two Card
 			printf("X ");
 			
 			cardSum[n_user] = getCardNum(CardTray[cardIndex]);
@@ -34,7 +34,7 @@ void printCardInitialStatus(void) {
 		
 	for(player_num=0; player_num<n_user; player_num++)	
 		{
-			if (player_num ==0)
+			if (player_num ==0)									// my Initial two Card
 			{
 				printf("   -> you        : ");
 				printCard(CardTray[cardIndex]);
@@ -50,7 +50,7 @@ void printCardInitialStatus(void) {
 				printf("\n");
 			}
 			
-			else 
+			else 											// nth player's Initial two Card
 			{
 				printf("   -> player %d   : ");
 				printCard(CardTray[cardIndex]);

@@ -6,9 +6,9 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 //card tray object
-int CardTray[N_CARDSET*N_CARD];
-int cardIndex = 0;	
-int cardcnt;
+int CardTray[N_CARDSET*N_CARD];							// to mixCardTray and arrange
+int cardIndex = 0;										// ex. nth one card out of 52 cards
+int cardcnt;											
 
 //player info
 int n_user;                       				    	//number of users
@@ -47,6 +47,10 @@ int main(int argc, char *argv[]) {
 	
 	//Game initialization --------
 	//1. players' dollar
+	for(player_num =0; player_num<n_user; player_num++)
+	{
+		dollar[player_num] = 50;
+	}
 	
 	//2. card tray
 	mixCardTray();
@@ -80,7 +84,7 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
-			while ((cardSum[0]<=21) || ((player_num>0)&&(player_num <= n_user))&&(cardSum[player_num]<17)) //do until the player dies or player says stop
+			while () //do until the player dies or player says stop
 			{
 				printUserCardStatus(player_num,cardcnt);  //print current card status 
 				calcStepResult();						//check the card status ::: 
