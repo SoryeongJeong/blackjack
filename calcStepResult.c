@@ -19,7 +19,7 @@ int calcStepResult() {
 	{
 		if (cardSum[player_num] == 21)
 		{
-		printf("\t ::: BLACK JACK! conguratulation, you win! ---> +$%d ($%d)\n",2*bet[player_num], dollar[player_num] + 2*bet[player_num]);
+		printf("\t ::: BLACK JACK! conguratulation, win! ---> +$%d ($%d)\n",2*bet[player_num], dollar[player_num] + 2*bet[player_num]);
 		}
 		else if (cardSum[player_num] >21)
 		{

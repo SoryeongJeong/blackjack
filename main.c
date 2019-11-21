@@ -38,7 +38,6 @@ int getIntegerInput(void) {
 int main(int argc, char *argv[]) {
 	
 	int roundIndex = 0;
-	int i;
 	srand((unsigned)time(NULL));
 	cardcnt = 2;
 	
@@ -84,7 +83,7 @@ int main(int argc, char *argv[]) {
 				printf(">>> player %d turn! -----\n", player_num);
 			}
 			
-			while () //do until the player dies or player says stop
+			while (player_num <= n_user) //do until the player dies or player says stop
 			{
 				printUserCardStatus(player_num,cardcnt);  //print current card status 
 				calcStepResult();						//check the card status ::: 
@@ -98,7 +97,6 @@ int main(int argc, char *argv[]) {
 		roundIndex++;
 		
 		//result
-		
 		checkResult();
 		} while (gameEnd == 0);
 		

@@ -8,6 +8,7 @@
 extern int n_user;
 extern int cardhold[N_MAX_USER+1][N_MAX_CARDHOLD];
 void offerCards(void) {
+	
 	int i;
 	
 	//1. give two card for each players

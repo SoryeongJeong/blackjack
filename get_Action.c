@@ -13,8 +13,6 @@ extern int cardcnt;
 
 int getAction(int cnt) {
 		
-
-			
 		int answer;
 		if (player_num == 0)
 		{		
@@ -25,27 +23,23 @@ int getAction(int cnt) {
 					{
 							cnt = cardcnt + 1;
 							cardIndex++;
-							cardhold[0][cnt] = pullCard();
+							cardhold[0][cnt] = CardTray[cardIndex];      		 // my nth card
 							cardSum[0] += getCardNum(CardTray[cardIndex]);
 						}
-						printf("cardnum : %i, number:%i\n", CardTray[cardIndex] , getCardNum(CardTray[cardIndex]));	
 		}
 		else if (player_num > 0 )
 		{		
 				printf("Action? (0 - go, others - stay) ");
 				if (cardSum[player_num] < 17)
 				{	
-					for(cnt=2; cnt<10;cnt++)
-					{
-						printf("   GO!\n");		
+				
+						printf("   GO!\n");	
+						cnt = cardcnt + 1;	
 						cardIndex++;
-						cardhold[player_num][cnt] = pullCard();
+						cardhold[n_user][cnt] = CardTray[cardIndex];			//player nth card
 						cardSum[player_num] += getCardNum(CardTray[cardIndex]);
-				//	cardhold[n_user][cnt] = CardTray[cardIndex];
+				}
 				
-					}
-				
-			}
 				else
 				{
 					printf("   STAY!\n");

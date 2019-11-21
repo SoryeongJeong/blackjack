@@ -4,13 +4,13 @@
 #include "headerbj.h"
 
 
-// calculate the card sum and see if : 1. under 21, 2. over 21, 3. blackjack
-
 extern int player_num;
 extern int cardSum[N_MAX_USER];
 extern int dollar[N_MAX_USER];	 
 extern int bet[N_MAX_USER]; 
 extern int n_user;
+
+//final Blackjack game result 
 
 int checkResult() {
 	
